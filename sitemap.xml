@@ -336,6 +336,36 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://auronen.github.io/gmc/zengin/union/zgamepad/</loc>
+         <lastmod>2022-10-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://auronen.github.io/gmc/zengin/union/zgamepad/controls/</loc>
+         <lastmod>2022-10-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://auronen.github.io/gmc/zengin/union/zgamepad/keys_engine_absolute/</loc>
+         <lastmod>2022-10-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://auronen.github.io/gmc/zengin/union/zgamepad/keys_engine_logical/</loc>
+         <lastmod>2022-10-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://auronen.github.io/gmc/zengin/union/zgamepad/keys_gamepad/</loc>
+         <lastmod>2022-10-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://auronen.github.io/gmc/zengin/union/zgamepad/logical_functions/</loc>
+         <lastmod>2022-10-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://auronen.github.io/gmc/zengin/video/</loc>
          <lastmod>2022-10-14</lastmod>
          <changefreq>daily</changefreq>
