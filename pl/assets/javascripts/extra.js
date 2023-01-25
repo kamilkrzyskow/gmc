@@ -187,7 +187,6 @@ function gmc404Redirect() {
 }
 
 const gmcSearchMutationCallback = (mutations, _) => {
-    console.time("callback")
     const originalHrefToElementMapping = new Set();
     const langHrefOffset = 4;
     const nodesForRemoval = [];
