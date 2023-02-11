@@ -457,6 +457,14 @@
          
     </url>
     <url>
+         <loc>https://gothic-modding-community.github.io/gmc/zengin/scripts/extenders/zparserextender/new/</loc>
+         <lastmod>2023-02-11</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://gothic-modding-community.github.io/gmc/en/zengin/scripts/extenders/zparserextender/new/"/>
+         <xhtml:link rel="alternate" hreflang="pl" href="https://gothic-modding-community.github.io/gmc/pl/zengin/scripts/extenders/zparserextender/new/"/>
+         
+    </url>
+    <url>
          <loc>https://gothic-modding-community.github.io/gmc/zengin/scripts/extenders/zparserextender/other/</loc>
          <lastmod>2023-02-11</lastmod>
          <changefreq>daily</changefreq>
