@@ -99,14 +99,14 @@ let gWindowLang = window.location.href.split("/")[gLangHrefOffset];
 
 window.addEventListener("DOMContentLoaded", _ => {
     gMarkCodeLineManager.setElement();
-    gmcExpandNavigation();
-    gmcExternalLinks();
     gmc404Redirect();
+    gmcExpandNavigation();
     gmcAddVersionToggle();
     gmcLinksForVersion();
     if (gGMC_PAGE_LOCALE !== "en" && gGMC_PAGE_LOCALE !== gGMC_PAGE_FILE_LOCALE) {
         gmcTranslateButton();
     }
+    gmcExternalLinks();
     new MutationObserver(gmcSearchMutationCallback)
         .observe(document.querySelector(".md-search-result__list"), {childList: true});
 });
