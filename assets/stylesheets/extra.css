@@ -130,12 +130,15 @@ div.md-nav__link--index {
 }
 
 /* override language selector */
-.md-header__button img.twemoji {
+.md-select button img.twemoji {
     height: 1.2rem;
+    vertical-align: middle;
 }
 
 .md-select__link img.twemoji {
-    height: 0.9em;
+    height: 1rem;
+    vertical-align: text-bottom;
+    margin-right: 1%;
 }
 
 /* endregion */
