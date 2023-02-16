@@ -158,6 +158,11 @@ function gmcExpandNavigation() {
     }
 
     const activeLink = document.querySelector(".md-nav__link--active");
+
+    if (!activeLink) {
+        return;
+    }
+
     let activeNav = activeLink.parentElement.querySelector("nav");
 
     if (!activeNav) {
