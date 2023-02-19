@@ -202,6 +202,8 @@ const gmcSearchMutationCallback = (mutations, _) => {
     const originalHrefToElementMapping = new Set();
     const nodesForRemoval = [];
 
+    // gmcDebug("Running mutations")
+
     for (const record of mutations) {
         for (const liNode of record.addedNodes) {
             for (const anchor of liNode.querySelectorAll("a")) {
@@ -216,27 +218,31 @@ const gmcSearchMutationCallback = (mutations, _) => {
             for (const anchor of liNode.querySelectorAll("a")) {
                 const hrefParts = anchor.href.split("/");
                 const langHrefOffset = 4;
-                const anchorLang = hrefParts[langHrefOffset];
-                const anchorBaseLength = (gGMC_PAGE_LOCALE === "en" ? 5 : 6);
-                const anchorIsNotBase = anchor.href.split("/").length > anchorBaseLength;
+                const anchorLocale = hrefParts[langHrefOffset];
+                const anchorBaseLength = (anchorLocale.length === 2 ? 6 : 5);
+                const anchorIsBase = anchor.href.split("/").length <= anchorBaseLength;
 
-                if (anchorLang.length === 2) {
-                    if (anchorLang !== gGMC_PAGE_LOCALE && anchorIsNotBase) {
-                        removeNode = true;
-                        // gmcDebug("removing localized duplicate", anchor.href);
-                        break;
-                    }
+                if (anchorLocale.length === 2 && anchorLocale !== gGMC_PAGE_LOCALE && !anchorIsBase) {
+                    removeNode = true;
+                    // gmcDebug("removing localized duplicate", anchor.href);
+                    break;
                 } else if (gGMC_PAGE_LOCALE !== "en") {
                     const newHref = `${hrefParts.slice(0, langHrefOffset).join("/")}/${gGMC_PAGE_LOCALE}/${hrefParts.slice(langHrefOffset).join("/")}`;
-                    if (originalHrefToElementMapping.has(newHref)) {
+                    // gmcDebug(`Generated href: ${newHref}`)
+                    if (anchorIsBase) {
+                        // gmcDebug("keeping base anchor: ", anchor.href);
+                    } else if (originalHrefToElementMapping.has(newHref)) {
                         removeNode = true;
                         // gmcDebug("removing redundant", anchor.href);
                         break;
-                    } else if (anchorIsNotBase) {
+                    } else {
                         // gmcDebug("localizing href:", anchor.href);
                         anchor.href = newHref;
                     }
                 }
+                // else {
+                //     gmcDebug("keeping normal anchor: ", anchor.href);
+                // }
             }
             if (removeNode)
                 nodesForRemoval.push(liNode);
@@ -324,9 +330,9 @@ const gmcTranslateButton = () => {
     const messageFileName = oldFileName === "index.md" ? `${topDirectory}/index.md` : oldFileName;
     const messageParam = encodeURIComponent(`Add \`${gGMC_PAGE_LOCALE}\` translation for \`${messageFileName}\``);
     const valueParam = encodeURIComponent([
-        "Open the `Preview` tab to display with better formatting",
+        "Open the `Preview` tab to display with better formatting.",
         "## Overview",
-        "This method of translation is for those that don't want to setup the project files.",
+        "This method of translation is for those that don't want to set up the project files.",
         "The file name and commit message are already set, best not to change them.",
         "Due to technical limitations you need to copy the English base contents yourself.",
         "Before you do that please make sure that:",
