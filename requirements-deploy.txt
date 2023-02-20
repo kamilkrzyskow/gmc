@@ -1,0 +1,6 @@
+# Deployment Requirements
+mkdocs-git-revision-date-localized-plugin==1.1.0
+# mkdocs-minify-plugin==0.6.2
+git+https://github.com/kamilkrzyskow/mkdocs-minify-plugin.git@7cae5550ecedf90458d53859dd8a4c92c9d0d5b2#egg=mkdocs_minify_plugin
+Pillow==9.4.0
+CairoSVG==2.6.0
