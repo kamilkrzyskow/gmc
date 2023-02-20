@@ -1,5 +1,6 @@
 site_name: Gothic Modding Community
 site_url: https://gothic-modding-community.github.io/gmc/
+site_description: 'Community maintained set of articles, tutorials and documentation for everything Gothic.'
 
 repo_name: Gothic-Modding-Community/gmc
 repo_url: https://github.com/Gothic-Modding-Community/gmc/
@@ -284,3 +285,5 @@ plugins:
         - index*.md
         - genome/index*.md
         - zengin/index*.md
+  - social:
+      cards: !ENV [GMC_ENABLE_ON_PUBLISH, False]

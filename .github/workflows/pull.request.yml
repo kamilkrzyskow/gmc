@@ -24,14 +24,14 @@ jobs:
         with:
           python-version: 3.11
           cache: pip
-      - name: Cache `requirements.txt`
-        id: cache-requirements
+      - name: Process Python Cache
+        id: cache-venv
         uses: actions/cache@v3
         with:
-          path: '**/venv/*'
-          key: requirements-${{ hashFiles('**/requirements*.txt') }}
-      - name: Install Dependencies into `venv`
-        if: steps.cache-requirements.outputs.cache-hit != 'true'
+          path: venv
+          key: requirements-${{ hashFiles('requirements*.txt') }}
+      - name: Create `venv` and Install Requirements
+        if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
           python -m venv venv
           source venv/bin/activate

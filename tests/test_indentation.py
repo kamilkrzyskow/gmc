@@ -5,7 +5,7 @@ import glob
 import os
 import unittest
 
-from tests.path_constants import DOCS_DIR
+from tests.path_constants import DOCS_DIR, ROOT_DIR
 
 
 class IndentationTest(unittest.TestCase):
@@ -23,6 +23,8 @@ class IndentationTest(unittest.TestCase):
         TODO might be reasonable to change the inside_admonition = False logic
         """
         paths = glob.glob("**/*.md", root_dir=DOCS_DIR, recursive=True)
+        test_log_lines = []
+
         for path in paths:
             file_path = os.path.join(DOCS_DIR, path)
 
@@ -33,8 +35,12 @@ class IndentationTest(unittest.TestCase):
             inside_admonition = False
             inside_codeblock = False
             inside_list = False
+            title = ""
 
             for n, line in enumerate(lines, start=1):
+                if line.startswith("# "):
+                    title = line.strip()
+
                 if inside_admonition:
                     if last_line.startswith(self.admonition_prefixes):
                         self.assertTrue(
@@ -92,11 +98,17 @@ class IndentationTest(unittest.TestCase):
 
                 last_line = line
 
+            test_log_lines.append(f"{path}{title}")
+
             self.assertTrue(
                 not inside_codeblock, f"File: {file_path} ended without closing a codeblock"
             )
 
         print(f"✅Tested {len(paths)} paths")
+
+        # test-run.log is used for hash calculation during the cache key creation.
+        with open(os.path.join(ROOT_DIR, "test-run.log"), "w", encoding="utf8") as file:
+            file.write("\n".join(test_log_lines))
 
 
 if __name__ == "__main__":
