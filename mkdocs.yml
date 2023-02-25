@@ -133,13 +133,13 @@ nav:
           - Classes:
             - C_Trigger class:    zengin/scripts/extenders/zparserextender/c_trigger.md
             - Engine classes:     zengin/scripts/extenders/zparserextender/helperclasses.md
-#           - External functions: zengin/scripts/extenders/zparserextender/externals.md
           - Daedalus Injection:
             - zengin/scripts/extenders/zparserextender/injection.md
             - META block:     zengin/scripts/extenders/zparserextender/meta.md
             - Hooking:        zengin/scripts/extenders/zparserextender/hooks.md
             - Other features: zengin/scripts/extenders/zparserextender/other.md
           - Externals:
+            - zengin/scripts/extenders/zparserextender/externals/index.md
             - String functions: zengin/scripts/extenders/zparserextender/externals/string.md
             - Menu function:    zengin/scripts/extenders/zparserextender/externals/menu.md
             - Log functions:     zengin/scripts/extenders/zparserextender/externals/log.md
