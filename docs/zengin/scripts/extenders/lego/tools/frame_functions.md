@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/frame_functions.md
+---
 # FrameFunctions
 The FrameFunctions package allows to call any number of functions called on every frame, or every spicified time delay.
 

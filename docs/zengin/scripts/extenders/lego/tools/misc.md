@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/misc.md
+---
 # Misc
 
 The Misc package introduces various helper functions that did not fit into any other package.

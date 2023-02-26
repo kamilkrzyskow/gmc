@@ -1,5 +1,8 @@
-
-# Object persistence
+---
+old_nav:
+    - genome/object_persistence.md
+---
+# Object persistence 
 
 
 !!! Warning "Please note the following warning about Risen 2, 3 and ELEX 1 and 2"

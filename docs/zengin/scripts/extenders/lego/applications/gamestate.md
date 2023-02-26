@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/gamestate.md
+---
 # Gamestate
 Gamestate package allows to check for different game states (game start, game load or level change).
 

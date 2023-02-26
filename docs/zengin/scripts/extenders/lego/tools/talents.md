@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/talents.md
+---
 # Talents
 The Talents package does two things:
 

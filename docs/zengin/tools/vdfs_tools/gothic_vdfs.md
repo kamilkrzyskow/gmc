@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/tools/gothic_vdfs.md
+---
 # GothicVDFS
 
 Gothic VDFS is still the most popular VDFS tool. It was created by NicoDE.

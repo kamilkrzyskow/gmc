@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/ikarus/keyboard.md
+---
 # Keyboard interaction
 This part of Ikarus implements function that make interaction with keyboard possible.
 

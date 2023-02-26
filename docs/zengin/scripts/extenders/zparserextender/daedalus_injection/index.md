@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/zparserextender/injection.md
+---
 # Daedalus Injection
 Script injection is a process of injecting Daedalus scripts on runtime without the need to recompile the scripts. This is essential for Union plugins that need to alter the scripts in a certain way, either for hotfixes or just for testing scripts without the need to recompile the whole `.dat` file.
 

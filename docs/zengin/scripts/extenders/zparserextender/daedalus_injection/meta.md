@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/zparserextender/meta.md
+---
 # META block
 The META block is optional. If it is specified, it has to be the very first thing in the file without any indent or a comment above it.
 

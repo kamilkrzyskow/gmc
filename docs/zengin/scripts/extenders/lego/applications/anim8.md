@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/anim8.md
+---
 # Anim8
 This package allows int or float values to be "animated" over a period of time. It is possible to string several commands together and to set the type of movement. The new version of PrintS from Interface uses Anim8.
 

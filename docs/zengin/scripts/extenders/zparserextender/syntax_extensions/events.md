@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/zparserextender/events.md
+---
 # Event functions
 Event functions are functions sharing the same name. It can be defined multiple times but only once per file. Such functions are useful for implementing *callback* type functions. Every time an event is called, all instances of the same name will be called. The event is `func` with a return type `event`. Events are defined globally, meaning they ignore namespace they are in. To call an event from a script, use the external function [`Hlp_DoEvent(var string funcName)`](../externals/hlp.md).
 

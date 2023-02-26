@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/item_helper.md
+---
 # ItemHelper
 This package is very simple - it retrieves a `oCItem` pointer from an `C_Item` instance valid for the current world and session.
 

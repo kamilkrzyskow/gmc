@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/union/zgamepad/logical_functions.md
+---
 # Logical function names
 Conditions for when to show or allow the control binding to work are specified using these logic functions. They describe different useful states of the game or user interface, allowing the user to set when will a certain control work. 
 ```

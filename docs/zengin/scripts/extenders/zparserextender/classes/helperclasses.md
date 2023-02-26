@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/zparserextender/helperclasses.md
+---
 # Engine classes
 zParserExtender implements various proxy classes that can be used to access game world objects.
 !!! Warning

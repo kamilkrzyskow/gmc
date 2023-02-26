@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/locals.md
+---
 # Locals
 Daedalus doesn't offer any local variables, which can quickly lead to problems with recursive functions. Locals allows variables to be saved temporarily on a pseudo-stack.
 Locals is a very specific package. People who work normally with Daedalus will never really need it.

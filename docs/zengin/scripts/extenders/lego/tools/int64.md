@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/int64.md
+---
 # Int64
 Int64 implements basic arithmetic for 64-bit integers based on machine code (hence the function signatures are also in machine code style). Furthermore, Int64 offers the constructor int64@ for Int64 objects, but mk64 expects a pointer, not a handle.
 

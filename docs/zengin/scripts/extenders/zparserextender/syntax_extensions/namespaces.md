@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/zparserextender/namespaces.md
+---
 # Namespaces
 zParserExtender also implements namespaces. Namespaces ensure that all symbols inside the namespace are unique.
 

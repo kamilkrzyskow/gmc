@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/ikarus/ini_access.md
+---
 # Configuration file access
 This part of Ikarus gives you access to `Gothic.ini` and loaded mod configuration files.
 

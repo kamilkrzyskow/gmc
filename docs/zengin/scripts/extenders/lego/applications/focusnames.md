@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/focusnames.md
+---
 # Focusnames
 This package colors the focus names of the NPCs in appropriate colors according to the behavior defined below (alpha values are taken into account). Also affects monsters. (Mobs/Items get Color_Neutral)
 

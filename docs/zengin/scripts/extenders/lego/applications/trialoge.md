@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/trialoge.md
+---
 # Trialoge
 This package allows you to create conversations with any number of NPCs and control the camera during the dialog.
 

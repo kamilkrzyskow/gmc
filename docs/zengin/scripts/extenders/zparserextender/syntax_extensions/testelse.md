@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/zparserextender/testelse.md
+---
 # Test-else statements
 
 The test-else bind statement can be used to define sections of code to be compiled. If the code is within the boundaries of the inactive test-else branch, it will not be compiled. This operator can take values as input that are converted to logical values. For example, if an object is passed as an argument, the parser will check for its existence. If it is an engine tag, it will return the result of matching the current engine with the tag:

@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/union/zgamepad/keys_gamepad.md
+---
 # Gamepad keys
 In order to set gamepad keys, you have to know the key codes as they are listed below.
 ```

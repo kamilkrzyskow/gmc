@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/bars.md
+---
 # Bars
 This package makes it very easy to add new bars, for e.g. stamina.
 

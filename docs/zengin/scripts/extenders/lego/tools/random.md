@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/random.md
+---
 # Random
 Provides more random randomization than `Hlp_Random()` function.
 

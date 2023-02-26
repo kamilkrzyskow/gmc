@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/ikarus/mem_access.md
+---
 # Elementary memory access
 This part of Ikarus makes it possible to read and write memory as different data types - integers, strings, arrays of integers and strings and bytes.
 

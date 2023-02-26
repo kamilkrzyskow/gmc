@@ -1,12 +1,16 @@
+---
+old_nav:
+    - zengin/anims/standalone_ani.md
+---
+# Standalone animation
+Let us start with the easiest animation - a very simple gesturing animation.  
+Firstly we have to have the animation source files ready. Best way to decompile them is using [Gothic Sourcer](https://worldofplayers.ru/threads/41942/). In GothicSourcer you choose **Tools > Decompiler models > Dynamic (MDS or MSB)** and choose an MDS file of your choice - `Humans.mds` in our case and then click the decompile button.
+
 !!! example "Acknowledgment"
     This tutorial would not be possible without the ZenGin documentation available in the mod-kit. Further credits also go to [Mark56](https://carnage-markus.blogspot.com) who helped me understand animations in the first place, [Fawkes](https://www.youtube.com/channel/UCheR2tr8u1CsUGG15Lu2mxQ) and his request for me to do some animations for his excellent mod - Replay Mod, and last but not least Flosha from the Phoenix team who was the one for whom I offered to write this tutorial to help with the development of the [Phoenix project](https://phoenixthegame.com/).
-# Standalone animation
-Let us start with the easiest animation - a very simple gesturing animation.
 
 !!! info
     You can find some of the videos that are mentioned in the text below in this [play-list](https://www.youtube.com/playlist?list=PLn8QrKx4F-EITe0yG_2n0z9p4q6EAp6rx).
-
-Firstly we have to have the animation source files ready. Best way to decompile them is using [Gothic Sourcer](https://worldofplayers.ru/threads/41942/). In GothicSourcer you choose **Tools > Decompiler models > Dynamic (MDS or MSB)** and choose an MDS file of your choice - `Humans.mds` in our case and then click the decompile button.
 
 ## Animating
 Open Blender, **File > Import > Kerrax ASCII model (.asc)**, navigate to the folder with your decompiled animation files and select `HUM_BODY_NAKED0.ASC`. This file contains the skeleton and skin model for human NPCs.

@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/zparserextender/while.md
+---
 # Native WHILE loop
 Just like [Ikarus](../../../../../notready.md) zParserExtender implements a while loop.
 

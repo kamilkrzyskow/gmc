@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/ai_function.md
+---
 # AI Function
 This package allows time-delayed functions to be called by enqueuing the functions in the AI queue of the NPC in question. This can be very useful for e.g. cutscenes.
 

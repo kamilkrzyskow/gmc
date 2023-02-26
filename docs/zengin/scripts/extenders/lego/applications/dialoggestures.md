@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/dialoggestures.md
+---
 # Dialoggestures
 This package can modify the NPCs' gestures during dialogue to better bring out emotions.
 

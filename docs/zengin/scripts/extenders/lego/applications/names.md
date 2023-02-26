@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/names.md
+---
 # Names
 Allows the user to change NPC name e.g. after he shows up.
 

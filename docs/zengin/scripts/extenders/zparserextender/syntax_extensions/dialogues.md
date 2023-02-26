@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/zparserextender/dialogues.md
+---
 # Dialogue constants
 To simplify dialogues, you can define up to 2 auxiliary variables or constants. Values corresponding to the current `C_Info` instance will be dynamically written there.
 

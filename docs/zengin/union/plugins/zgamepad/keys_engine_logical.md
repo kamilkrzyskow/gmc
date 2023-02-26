@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/union/zgamepad/keys_engine_logical.md
+---
 # Engine logical keys
 Logical keys are the keys you set in keyboard settings in the game menu. These can fill multiple roles in different situations and the gamepad controls can be set to emulate these logical keys.
 ```

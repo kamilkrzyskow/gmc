@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/union/zgamepad/index.md
+---
 # zGamePad
 zGamePad plugin adds gamepad support for ZenGin games.  
 

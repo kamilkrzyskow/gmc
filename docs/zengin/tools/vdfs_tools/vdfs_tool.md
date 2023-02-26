@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/tools/vdfs_tool.md
+---
 # VDFS Tool
 
 VDFS Tool is a new program that supports new features introduced to VDFS by the Union team. Like ZIP compression or drag and drop support.

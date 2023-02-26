@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/scripts/extenders/lego/console_commands.md
+---
 # Console Commands
 This package allows you to create new console commands.
 

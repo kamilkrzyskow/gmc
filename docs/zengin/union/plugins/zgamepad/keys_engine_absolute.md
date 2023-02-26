@@ -1,3 +1,7 @@
+---
+old_nav:
+    - zengin/union/zgamepad/keys_engine_absolute.md
+---
 # Engine absolute keys
 Absolute keys are the physical keys on your keyboard.
 ```
