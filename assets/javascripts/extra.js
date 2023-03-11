@@ -159,9 +159,19 @@ function gmcExpandNavigation() {
     }
 
     let activeNav = activeLink.parentElement.querySelector("nav");
+    let foundInParent = true;
 
-    if (!activeNav) {
+    if (!activeNav || activeNav.className.includes("md-nav--secondary")) {
         activeNav = activeLink.closest("nav");
+        foundInParent = false;
+        // gmcDebug(`nav not foundInParent`);
+    }
+
+    if (activeNav.dataset.hasOwnProperty("mdLevel")) {
+        if (!foundInParent && activeNav.dataset.mdLevel < 2) {
+            // gmcDebug(`nav level too low, not expanding`);
+            return;
+        }
     }
 
     const children = activeNav.querySelector("ul").children;
@@ -306,10 +316,6 @@ const gmcLinksForVersion = () => {
     if (gGMC_DEV) {
         for (const anchor of document.querySelectorAll("a.md-source"))
             anchor.href = `${anchor.href}tree/dev`;
-
-        const supportTranslation = document.querySelector(".gmc-announce a");
-        if (supportTranslation)
-            supportTranslation.href = supportTranslation.href.replace("/gmc/", "/");
     }
 
     for (const anchor of document.querySelectorAll("a.md-content__button")) {
