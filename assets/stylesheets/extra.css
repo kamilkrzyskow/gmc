@@ -83,6 +83,9 @@ div.md-nav__link--index {
 }
 
 @media {
+    [data-md-color-scheme=slate] :is(.dummy-for-compressor) {
+        display: none;
+    }
     /*--md-default-fg-color--light:hsla(var(--md-hue),75%,90%,0.62);*/
     [data-md-color-scheme=slate] :is(h1, h2, h3, h4, h5, h6) {
         --md-default-fg-color--light: hsla(var(--md-hue), 100%, 100%, 1);
