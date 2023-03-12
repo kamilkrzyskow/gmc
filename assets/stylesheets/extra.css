@@ -70,7 +70,7 @@ div.md-nav__link--index {
     font-weight: 700;
 }
 
-.md-typeset :is(h2, h3, h4, h5, h6) {
+.md-typeset :is(h3, h4, h5, h6) {
     padding-top: 0.5em;
     margin-top: 0.5em;
 }
@@ -94,10 +94,10 @@ div.md-nav__link--index {
     [data-md-color-scheme=default] :is(h1, h2, h3, h4, h5, h6) {
         --md-default-fg-color--light: hsla(0, 0%, 0%, 1);
     }
-    [data-md-color-scheme=slate] :is(h2, h3, h4, h5, h6) {
+    [data-md-color-scheme=slate] :is(h3, h4, h5, h6) {
         border-top: 1px solid hsla(var(--md-hue), 100%, 100%, 0.15);
     }
-    [data-md-color-scheme=default] :is(h2, h3, h4, h5, h6) {
+    [data-md-color-scheme=default] :is(h3, h4, h5, h6) {
         border-top: 1px solid hsla(0, 0%, 0%, 0.15);
     }
 }
