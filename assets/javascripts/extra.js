@@ -89,8 +89,9 @@ class MarkCodeLineManager {
 
 const gGMC_LOCAL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
 const gGMC_DEV = window.location.hostname.toLowerCase() !== "gothic-modding-community.github.io" && !gGMC_LOCAL;
+const gGMC_DEFAULT_LOCALE = "en";
 const gMarkCodeLineManager = new MarkCodeLineManager();
-const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+const gMutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
 window.addEventListener("DOMContentLoaded", _ => {
     gMarkCodeLineManager.setElement();
@@ -98,11 +99,12 @@ window.addEventListener("DOMContentLoaded", _ => {
     gmcExpandNavigation();
     gmcAddVersionToggle();
     gmcLinksForVersion();
-    if (gGMC_PAGE_LOCALE !== "en" && gGMC_PAGE_LOCALE !== gGMC_PAGE_FILE_LOCALE) {
+    if (gGMC_PAGE_LOCALE !== gGMC_DEFAULT_LOCALE && gGMC_PAGE_LOCALE !== gGMC_PAGE_FILE_LOCALE) {
         gmcTranslateButton();
     }
+    gmcRemoveCodeLines();
     gmcExternalLinks();
-    new MutationObserver(gmcSearchMutationCallback)
+    new gMutationObserver(gmcSearchMutationCallback)
         .observe(document.querySelector(".md-search-result__list"), {childList: true});
 });
 
@@ -159,16 +161,14 @@ function gmcExpandNavigation() {
     }
 
     let activeNav = activeLink.parentElement.querySelector("nav");
-    let foundInParent = true;
 
     if (!activeNav || activeNav.className.includes("md-nav--secondary")) {
-        activeNav = activeLink.closest("nav");
-        foundInParent = false;
         // gmcDebug(`nav not foundInParent`);
+        activeNav = activeLink.closest("nav");
     }
 
     if (activeNav.dataset.hasOwnProperty("mdLevel")) {
-        if (!foundInParent && activeNav.dataset.mdLevel < 2) {
+        if (activeNav.dataset.mdLevel < 2) {
             // gmcDebug(`nav level too low, not expanding`);
             return;
         }
@@ -212,12 +212,13 @@ const gmcSearchMutationCallback = (mutations, _) => {
     const originalHrefToElementMapping = new Set();
     const nodesForRemoval = [];
 
-    // gmcDebug("Running mutations")
+    // gmcDebug("Running mutations");
 
     for (const record of mutations) {
         for (const liNode of record.addedNodes) {
             for (const anchor of liNode.querySelectorAll("a")) {
                 originalHrefToElementMapping.add(anchor.href);
+                // gmcDebug("initial mutation: ", anchor.href);
             }
         }
     }
@@ -233,17 +234,40 @@ const gmcSearchMutationCallback = (mutations, _) => {
                 const anchorIsBase = anchor.href.split("/").length <= anchorBaseLength;
 
                 if (anchorLocale.length === 2 && anchorLocale !== gGMC_PAGE_LOCALE && !anchorIsBase) {
+                    /*
+                    * This case happens when a search result link has a different locale than the current one.
+                    * Being on CS version and searching for something, PL result shows up and gets removed.
+                    * By design choice we keep the Base links to allow locale switching via searching for the Base locale link.
+                    */
+                    // gmcDebug("removing different localization", anchor.href);
                     removeNode = true;
-                    // gmcDebug("removing localized duplicate", anchor.href);
                     break;
-                } else if (gGMC_PAGE_LOCALE !== "en") {
-                    const newHref = `${hrefParts.slice(0, langHrefOffset).join("/")}/${gGMC_PAGE_LOCALE}/${hrefParts.slice(langHrefOffset).join("/")}`;
-                    // gmcDebug(`Generated href: ${newHref}`)
+                } else if (gGMC_PAGE_LOCALE !== gGMC_DEFAULT_LOCALE) {
                     if (anchorIsBase) {
-                        // gmcDebug("keeping base anchor: ", anchor.href);
-                    } else if (originalHrefToElementMapping.has(newHref)) {
+                        // By design choice we keep the Base links to allow locale switching via searching for the Base locale link.
+                        // gmcDebug("keeping base href:", anchor.href);
+                        continue;
+                    }
+
+                    if (anchorLocale === gGMC_PAGE_LOCALE) {
+                        // gmcDebug("keeping href for the current locale:", anchor.href);
+                        continue;
+                    }
+
+                    const leftChunk = hrefParts.slice(0, langHrefOffset).join("/");
+                    const rightChunk = hrefParts.slice(langHrefOffset).join("/");
+                    const newHref = `${leftChunk}/${gGMC_PAGE_LOCALE}/${rightChunk}`;
+                    // gmcDebug(`Parts: ${hrefParts} ;`, `Left: ${leftChunk} ;`, `Right: ${rightChunk}`);
+                    // gmcDebug(`Generated href: ${newHref}`);
+
+                    if (originalHrefToElementMapping.has(newHref)) {
+                        /*
+                        * This case happens when there is a localized page and default language page in the same search.
+                        * Being on PL searching for Talent, shows both the PL and EN site.
+                        * Since we have the PL site we delete the EN.
+                        */
                         removeNode = true;
-                        // gmcDebug("removing redundant", anchor.href);
+                        // gmcDebug("removing not localized duplicate:", anchor.href);
                         break;
                     } else {
                         // gmcDebug("localizing href:", anchor.href);
@@ -367,6 +391,20 @@ const gmcTranslateButton = () => {
     newAnchor.title = gGMC_TRANSLATE_CTA;
     anchor.parentElement.prepend(newAnchor);
 }
+
+const gmcRemoveCodeLines = () => {
+    const nodesForRemoval = [];
+    const lineContainers = document.querySelectorAll(".highlighttable .linenos");
+    for (const container of lineContainers) {
+      let lines = container.querySelectorAll("span.normal")
+      if (lines.length < 3) {
+        nodesForRemoval.push(container);
+      }
+    }
+    for (const container of nodesForRemoval) {
+      container.remove();
+    }
+};
 
 function gmcDebug(...message) {
     if (gGMC_LOCAL)
