@@ -23,6 +23,11 @@
     max-width: 75rem;
 }
 
+/* Add left padding indent to the content */
+article > div > :is(:not(h1, h2, h3, h4)) {
+    padding-left: 1em !important;
+}
+
 /* Shrink header and footer to the content size*/
 .md-grid {
     /* Default 61rem */
@@ -96,7 +101,7 @@ div.md-nav__link--index {
         --md-accent-fg-color: #0b65b0;
     }
     [data-md-color-scheme=slate] {
-        --md-accent-fg-color: #00aafc;
+        --md-accent-fg-color: var(--gmc-blue-tint);
     }
 }
 
@@ -110,6 +115,7 @@ div.md-nav__link--index {
 .md-typeset :is(h1, h2, h3, h4, h5, h6) {
     font-weight: 700;
     color: var(--md-default-fg-color--light);
+    text-shadow: 1px 1px 1px var(--gmc-blue-tint);
 }
 
 .md-typeset :is(h3, h4, h5, h6) {
