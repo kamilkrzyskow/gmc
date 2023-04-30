@@ -115,7 +115,7 @@ div.md-nav__link--index {
 .md-typeset :is(h1, h2, h3, h4, h5, h6) {
     font-weight: 700;
     color: var(--md-default-fg-color--light);
-    text-shadow: 1px 0 1px var(--md-default-fg-color--light);
+    text-shadow: 0 0 0 var(--md-default-fg-color--light);
 }
 
 .md-typeset :is(h3, h4, h5, h6) {
