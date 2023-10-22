@@ -7,7 +7,9 @@ repo_url: https://github.com/Gothic-Modding-Community/gmc/
 edit_uri: edit/main/docs/
 
 watch:
-  - overrides
+  - overrides/assets
+  - overrides/.snippets
+  - overrides/main.html
 
 hooks:
   - overrides/.hooks/theme_overrides_manager.py
@@ -128,8 +130,8 @@ plugins:
       js_files:
         - assets/javascripts/extra.js
   - i18n:
+      build_only_locale: !ENV [GMC_DEV_LOCALE]
       docs_structure: suffix
-      development_locale: !ENV [GMC_DEV_LOCALE]
       languages:
         - name: en - English
           locale: en
