@@ -52,6 +52,7 @@ theme:
     - content.code.copy
     - content.action.edit
     - content.action.view
+    - content.tooltips
 
 extra_css:
   - assets/stylesheets/extra.css
